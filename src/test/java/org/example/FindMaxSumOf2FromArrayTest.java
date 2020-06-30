@@ -45,4 +45,20 @@ public class FindMaxSumOf2FromArrayTest
         assertArrayEquals(expected,FindMaxSumOf2FromArray.maxTwo(array));
     }
 
+    @DataProvider
+    public Object[][] data(){
+        return new Object[][]{
+                {new int[]{2,4,3,5,1},new int[]{5,4}},
+                {new int[]{},new int[]{0,0}},
+                {new int[]{5},new int[]{5}},
+                {new int[]{-7,-5,-3,-9,-2},new int[]{-2,-3}},
+
+        };
+    }
+
+    @Test(DataProvider="data")
+    public void dataProviderTest(int[] input,int[] expected){
+        assertArrayEquals(expected,FindMaxSumOf2FromArray.maxTwo(input));
+    }
+
 }
